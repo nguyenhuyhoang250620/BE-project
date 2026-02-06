@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use("/auth", require("./modules/auth/auth.route"));
-
+app.use("/menu",require('./modules/menu/menu.route'));
 app.get(
   "/protected",
   require("./modules/auth/auth.middleware").authGuard,
