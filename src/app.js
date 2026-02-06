@@ -3,7 +3,7 @@ require("./database");
 
 const express = require("express");
 const app = express();
-
+const PORT = process.env.PORT || 3000
 app.use(express.json());
 app.use("/auth", require("./modules/auth/auth.route"));
 app.use("/menu",require('./modules/menu/menu.route'));
@@ -15,4 +15,4 @@ app.get(
   },
 );
 
-app.listen(3000, () => console.log("auth server running"));
+app.listen(PORT, () => console.log("auth server running"));
